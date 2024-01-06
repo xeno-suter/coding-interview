@@ -6,7 +6,24 @@
  */
 
 function climbingStairs(stairs) {
+    let firstStep = 1;
+    let secondStep = 2;
+    let currentStep = 0;
 
+    if (stairs === 1) {
+        return firstStep;
+    }
+    if (stairs === 2) {
+        return secondStep;
+    }
+
+    for (let i = 3; i <= stairs; i++) {
+        currentStep = firstStep + secondStep;
+        firstStep = secondStep;
+        secondStep = currentStep;
+    }
+
+    return currentStep;
 }
 
 
